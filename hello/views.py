@@ -11,6 +11,8 @@ def index(request):
 def new_entry(request):
     return render(request, 'new_entry.html')
 
+def projects(request):
+    return render(request, 'projects.html')
 # def new_topic(request):
 
 def db(request):
