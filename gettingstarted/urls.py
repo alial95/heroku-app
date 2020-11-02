@@ -18,5 +18,5 @@ urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
-    path('', include('hello.urls'))
+    path('', hello.views.new_entry, name='new_entry')
 ]
