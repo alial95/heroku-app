@@ -14,7 +14,8 @@ def new_entry(request):
 def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
-
+def drinks(request):
+    return render(request, 'drinks.html')
 def db(request):
 
     greeting = Greeting()
