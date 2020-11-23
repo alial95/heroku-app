@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import DrinkForm
 from .models import Greeting, Entry, Drinks
@@ -22,7 +22,15 @@ def drinks(request):
     drinks = Drinks.objects.all()
     return render(request, 'drinks.html', {'drinks': drinks})
 def new_drinks(request):
-    form = DrinkForm()
+    if request.method == "POST":  
+        form = DrinkForm(request.POST)  
+        if form.is_valid():  
+            try:  
+                return redirect('/')  
+            except:  
+                pass  
+    else:  
+        form = DrinkForm()  
     return render(request, 'new_drinks.html', {'form': form})
 
 def db(request):
