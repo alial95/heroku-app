@@ -19,8 +19,8 @@ def drinks(request):
         # No data submitted; create a blank form.
         form = DrinkForm()
     
-    drinks = Drinks.objects.all()
-    return render(request, 'drinks.html', {'drinks': drinks})
+    # drinks = Drinks.objects.all()
+    return render(request, 'drinks.html')
 def new_drinks(request):
     if request.method == "POST":  
         form = DrinkForm(request.POST)  
