@@ -18,7 +18,7 @@ def drinks(request):
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = DrinkForm()
-    # drinks = Drinks.objects.get()
+    drinks = Drinks.objects.get()
     return render(request, 'drinks.html')
 def db(request):
 
