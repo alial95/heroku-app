@@ -29,7 +29,7 @@ class Topic(models.Model):
         return self.text
 
 class Drinks(models.Model):
-    name = models.TextField(max_length=15)
+    name = models.CharField(max_length=15)
     size = models.CharField(max_length=100)
     price = models.FloatField()
     def __repr__(self):
