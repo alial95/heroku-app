@@ -3,13 +3,19 @@
 {% block content %}
 <div class="jumbotron text-center">
     <div class="container">
+        <h1> Drinks App</h1>
+        <h2>This app allows you to add new people and drinks, then create a order. </h2>
+        <ul>
+            <li><a href="{% url 'home:new_person' %}">Add a new Person</a></li>
+            <li><a href="{% url 'home:new_drink' %}">Add a new Drink</a></li>
+        </ul>
 <div>
     testing the drinks page
 </div>
 
-{% for drink in drinks %}
+<!-- {% for drink in drinks %}
     <li>{{ drink }}</li>
-{% endfor %}
+{% endfor %} -->
 </div>
 </div>
 {% endblock content %}
