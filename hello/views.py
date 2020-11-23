@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import DrinkForm
-from .models import Greeting, Entry, Drinks
+from .models import Greeting, Entry, Drinks, Sizes
 
 # Create your views here.
 def index(request):
@@ -30,7 +30,8 @@ def new_drinks(request):
             print('Form is incorrectly formatted') 
     else:  
         form = DrinkForm()  
-    return render(request, 'new_drinks.html', {'form': form})
+    sizes = Sizes.objects.all()
+    return render(request, 'new_drinks.html', {'form': form, 'sizes': sizes})
 
 def db(request):
 
