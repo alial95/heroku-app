@@ -10,7 +10,7 @@
     <button name="submit">Add new drink</button>
 </form>
 {% for drink in drinks %}
-    <li>{{ drink }}</li>
+    <li>{{ drink.name }}</li>
 {% endfor %}
 
 {% endblock content %}
