@@ -23,7 +23,7 @@ def drinks(request):
     return render(request, 'drinks.html', {'drinks': drinks})
 def add_drink(request):
     form = DrinkForm()
-    return render(request, 'new_drinks.html', {'new drinks': form})
+    return render(request, 'new_drinks.html')
 
 def db(request):
 
