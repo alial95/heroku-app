@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
 <div>
     testing the drinks page
 </div>
@@ -12,5 +14,6 @@
 {% for drink in drinks %}
     <li>{{ drink.name }}</li>
 {% endfor %}
-
+</div>
+</div>
 {% endblock content %}
