@@ -21,5 +21,5 @@ urlpatterns = [
     path('', hello.views.new_entry, name='new_entry'),
     path('', hello.views.projects, name='projects'),
     path('', include('hello.urls'), name='hello'),
-    path('', hello.views.drinks, name='drinks')
+    path('drinks/', hello.views.drinks, name='drinks')
 ]
