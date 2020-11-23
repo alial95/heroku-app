@@ -52,10 +52,12 @@ class Person(models.Model):
 class Test(models.Model):
     text = models.CharField(max_length=350)
     number = models.IntegerField()
-
+    def __str__(self):
+        return self.text
 class Test2(models.Model):
     text = models.ForeignKey(Test, on_delete=models.CASCADE)
     number = models.IntegerField()
-
+    def __str__(self):
+        return self.text
 
 
