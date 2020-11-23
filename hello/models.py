@@ -28,6 +28,11 @@ class Topic(models.Model):
         """Return a string representation of the model.""" 
         return self.text
 
+class Sizes(models.Model):
+    size = models.CharField(max_length=100)
+    def __str__(self):
+        return f'Drink Size: {self.size}.'
+
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
     size = models.ForeignKey(Sizes, default=1, on_delete=models.SET_DEFAULT)
@@ -35,7 +40,3 @@ class Drinks(models.Model):
     def __str__(self):
         return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
 
-class Sizes(models.Model):
-    size = models.CharField(max_length=100)
-    def __str__(self):
-        return f'Drink Size: {self.size}.'
