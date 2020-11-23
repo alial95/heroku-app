@@ -35,7 +35,7 @@ class Sizes(models.Model):
 
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
-    size_id = models.ForeignKey(Sizes, on_delete=models.CASCADE)
+    size = models.ForeignKey(Sizes, on_delete=models.CASCADE)
     price = models.FloatField()
     def __str__(self):
         return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
@@ -43,7 +43,7 @@ class Drinks(models.Model):
 class Person(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    drinks_id = models.ForeignKey(Drinks, on_delete=models.CASCADE)
+    favourite_drink = models.ForeignKey(Drinks, on_delete=models.CASCADE)
     age = models.IntegerField(null=True)
 
     def __str__(self):
