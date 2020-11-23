@@ -29,13 +29,13 @@ class Topic(models.Model):
         return self.text
 
 class Sizes(models.Model):
-    size = models.CharField(max_length=100, unique=True)
+    size = models.CharField(max_length=100)
     def __str__(self):
         return self.size
 
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
-    size_id = models.ForeignKey(Sizes, default=1, on_delete=models.CASCADE)
+    size = models.ForeignKey(Sizes, default=1, on_delete=models.CASCADE)
     price = models.FloatField()
     def __str__(self):
         return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
@@ -48,4 +48,14 @@ class Person(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+class Test(model.Model):
+    text = models.CharField(max_length=350)
+    number = models.IntegerField()
+
+class Test2(model.Model):
+    text = models.ForeignKey(Test, on_delete=models.CASCADE)
+    number = models.IntegerField()
+    
+
 
