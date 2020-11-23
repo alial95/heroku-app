@@ -31,7 +31,7 @@ class Topic(models.Model):
 class Sizes(models.Model):
     size = models.CharField(max_length=100)
     def __str__(self):
-        return f'Drink Size: {self.size}.'
+        return self.size
 
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
