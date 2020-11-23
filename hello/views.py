@@ -19,7 +19,7 @@ def drinks(request):
         # No data submitted; create a blank form.
         form = DrinkForm()
     drinks = Drinks.objects.all()
-    return render(request, 'drinks.html', {'drinks': form})
+    return render(request, 'drinks.html', {'drinks': drinks})
 def db(request):
 
     greeting = Greeting()
