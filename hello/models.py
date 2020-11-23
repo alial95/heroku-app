@@ -30,7 +30,7 @@ class Topic(models.Model):
 
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
-    size = models.ForeignKey(Sizes.size, default=1, on_delete=models.SET_DEFAULT)
+    size = models.ForeignKey(Sizes, default=1, on_delete=models.SET_DEFAULT)
     price = models.FloatField()
     def __str__(self):
         return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
