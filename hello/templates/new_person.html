@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>Make a new person</h1>
+    
+        <p>Please fill in the details of the new person you wish to create. </p>
+        
+        <form action="{% url 'new_person' %}" method='post'> 
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit"> Add Person </button>
+        </form>
+
+
+</div>
+</div>
+
+
+{% block content %}

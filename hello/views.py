@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import DrinkForm
+from .forms import DrinkForm, PersonForm
 from .models import Greeting, Entry, Drinks, Sizes
 
 # Create your views here.
@@ -32,6 +32,17 @@ def new_drinks(request):
         form = DrinkForm()  
     sizes = Sizes.objects.all()
     return render(request, 'new_drinks.html', {'form': form, 'sizes': sizes})
+
+def new_person(request):
+    if request.method == "POST":  
+        form = PersonForm(request.POST)  
+        if form.is_valid():  
+            form.save()
+        else:
+            print('Form is incorrectly formatted') 
+    else:  
+        form = PersonForm() 
+    return render(request, 'new_person.html', {'form': form})
 
 def db(request):
 
