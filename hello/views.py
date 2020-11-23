@@ -21,7 +21,7 @@ def drinks(request):
     
     drinks = Drinks.objects.all()
     return render(request, 'drinks.html', {'drinks': drinks})
-def add_drink(request):
+def new_drinks(request):
     form = DrinkForm()
     return render(request, 'new_drinks.html')
 

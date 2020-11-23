@@ -22,5 +22,5 @@ urlpatterns = [
     path('', hello.views.projects, name='projects'),
     path('', include('hello.urls'), name='hello'),
     path('drinks/', hello.views.drinks, name='drinks'),
-    path('newdrinks/', hello.views.add_drink, name='new_drink')
+    path('newdrinks/', hello.views.new_drinks, name='new_drink')
 ]
