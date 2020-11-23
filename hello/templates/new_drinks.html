@@ -1,5 +1,11 @@
 {% extends "base.html" %}
-{% load static &}
+{% load static %}
 {% block content %}
 
+<form action="{% url 'new_drinks' %}" method='post'> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit"> Add drinks </button>
+</form>
+</div>
 {% endblock %}
