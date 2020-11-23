@@ -25,10 +25,9 @@ def new_drinks(request):
     if request.method == "POST":  
         form = DrinkForm(request.POST)  
         if form.is_valid():  
-            try:  
-                return redirect('/')  
-            except:  
-                pass  
+            form.save()
+        else:
+            print('Form is incorrectly formatted') 
     else:  
         form = DrinkForm()  
     return render(request, 'new_drinks.html', {'form': form})
