@@ -49,13 +49,13 @@ class Person(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-class Test(model.Model):
+class Test(models.Model):
     text = models.CharField(max_length=350)
     number = models.IntegerField()
 
-class Test2(model.Model):
+class Test2(models.Model):
     text = models.ForeignKey(Test, on_delete=models.CASCADE)
     number = models.IntegerField()
-    
+
 
 
