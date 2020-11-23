@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting, Entry
+from .models import Greeting, Entry, Drinks
 
 # Create your views here.
 def index(request):
@@ -15,6 +15,7 @@ def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
 def drinks(request):
+    drinks = [x for x in ]
     return render(request, 'drinks.html')
 def db(request):
 

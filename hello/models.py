@@ -27,3 +27,9 @@ class Topic(models.Model):
     def __str__(self):
         """Return a string representation of the model.""" 
         return self.text
+
+class Drinks(models.Model):
+    name = models.CharField(max_length=15)
+    size = models.CharField()
+    price = models.FloatField()
+    
