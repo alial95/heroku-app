@@ -4,7 +4,7 @@
 <div>
     testing the drinks page
 </div>
-<form action="{% url 'hello:drinks' %}" method='post'> 
+<form action="{% url 'drinks' %}" method='post'> 
     {% csrf_token %}
     {{ form.as_p }}
     <button name="submit">Add new drink</button>
