@@ -40,3 +40,12 @@ class Drinks(models.Model):
     def __str__(self):
         return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
 
+class Person(models.Model):
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    favourite_drink = models.ForeignKey(Drinks.name, on_delete=models.SET_DEFAULT)
+    age = models.IntegerField(null=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
