@@ -30,6 +30,5 @@ class Topic(models.Model):
 
 class Drinks(models.Model):
     name = models.CharField(max_length=15)
-    size = models.CharField()
+    size = models.CharField(max_length=100)
     price = models.FloatField()
-    

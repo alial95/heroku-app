@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .forms import DrinkForm
 from .models import Greeting, Entry, Drinks
 
 # Create your views here.
@@ -15,7 +15,10 @@ def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
 def drinks(request):
-    # drinks = [x for x in ]
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = DrinkForm()
+    drinks = Drinks.objects.get()
     return render(request, 'drinks.html')
 def db(request):
 
