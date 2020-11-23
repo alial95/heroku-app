@@ -43,8 +43,8 @@ class Drinks(models.Model):
 class Person(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    # favourite_drink = models.ForeignKey(Drinks, on_delete=models.CASCADE)
-    age = models.IntegerField(null=True)
+    favourite_drink = models.ForeignKey(Drinks, on_delete=models.CASCADE)
+    age = models.IntegerField()
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
