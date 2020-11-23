@@ -33,4 +33,4 @@ class Drinks(models.Model):
     size = models.CharField(max_length=100)
     price = models.FloatField()
     def __str__(self):
-        return f"{self.name}'s price is {self.price} and the size is {self.size}"
+        return f"Drink Name: {self.name}. Price: {self.price}. Size: {self.size}"
