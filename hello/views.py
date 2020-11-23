@@ -15,7 +15,7 @@ def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
 def drinks(request):
-    drinks = [x for x in ]
+    # drinks = [x for x in ]
     return render(request, 'drinks.html')
 def db(request):
 
