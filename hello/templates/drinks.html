@@ -10,11 +10,7 @@
     <button name="submit">Add new drink</button>
 </form>
 {% for drink in drinks %}
-      <li><h3>
-        <a href="{% url 'drinks' drink.id %}">{{ drink }}</a>
-      </h3></li>
-  {% empty %}
-   <li><h3>No drinks to display.</h3></li>
+    <li>{{ drink }}</li>
 {% endfor %}
 
 {% endblock content %}
