@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
 <h1 class='display'> Lets add some drinks!</h1>
 <form action="{% url 'new_drink' %}" method='post'> 
     {% csrf_token %}
     {{ form.as_p }}
     <button name="submit"> Add drink </button>
 </form>
-{% for size in sizes %}
-    <li>{{ size }}</li>
-{% endfor %}
+
+</div>
 </div>
 {% endblock %}

@@ -60,10 +60,10 @@ class Test2(models.Model):
     def __str__(self):
         return self.text
 
-# class Round:
+class Round:
 
 
-# class Orders:
-    # round_ = models.
+class Orders:
+    brewer = models.ForeignKey(Person, on_delete=models.SET_DEFAULT)
 
 
