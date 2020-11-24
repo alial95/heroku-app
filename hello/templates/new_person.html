@@ -7,7 +7,7 @@
         <h1>Make a new person</h1>
     
         <p>Please fill in the details of the new person you wish to create. </p>
-        {% if drinks > 0 %}
+        {% if drinks == 0 %}
         <p> There are no drinks currently in the database right now. Would you like to add some first?</p>
         {% endif %}
         <form action="{% url 'new_person' %}" method='post'> 
