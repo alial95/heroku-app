@@ -64,7 +64,8 @@ class Test2(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-
+class TestModel(models.Model):
+    test = models.CharField(max_length=90)
 
 # class Round:
 #     brewer = models.CharField(max_length=150)
