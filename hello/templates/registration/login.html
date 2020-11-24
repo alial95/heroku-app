@@ -9,4 +9,6 @@
   {{ form.as_p }}
   <button type="submit">Log In</button>
 </form>
+<input type="hidden" name="next"
+     value="{% url '/' %}" />
 {% endblock content %}
