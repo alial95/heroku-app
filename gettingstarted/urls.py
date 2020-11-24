@@ -26,6 +26,5 @@ urlpatterns = [
     path('new_drinks/', hello.views.new_drinks, name='new_drink'),
     path('new_person/', hello.views.new_person, name='new_person'),
     path('users/', hello.views.ViewUsers.as_view(), name='users'),
-    path('login/', auth_views.login, name='login'),
-    path('logout/', auth_views.logout, name='logout')
+    path('', include('django.contrib.auth.urls'))
 ]
