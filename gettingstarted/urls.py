@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from django.contrib import admin
+from django.contrib import admin, auth
 
 admin.autodiscover()
 
@@ -24,5 +24,7 @@ urlpatterns = [
     path('drinks/', hello.views.drinks, name='drinks'),
     path('new_drinks/', hello.views.new_drinks, name='new_drink'),
     path('new_person/', hello.views.new_person, name='new_person'),
-    path('users/', hello.views.ViewUsers.as_view(), name='users')
+    path('users/', hello.views.ViewUsers.as_view(), name='users'),
+    path('login/', auth.views.login, name='login'),
+    path('logout/', auth.views.logout, name='logout')
 ]
