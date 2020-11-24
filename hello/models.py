@@ -60,10 +60,20 @@ class Test2(models.Model):
     def __str__(self):
         return self.text
 
-class Round:
 
 
-class Orders:
-    brewer = models.ForeignKey(Person, on_delete=models.SET_DEFAULT)
+
+
+
+# class Round:
+#     brewer = models.CharField(max_length=150)
+#     orders = models.JSONField()
+#     cost = models.FloatField()
+
+
+
+# class Orders:
+#     brewer = models.ForeignKey(Person, on_delete=models.SET_DEFAULT)
+#     cost = models.()
 
 
