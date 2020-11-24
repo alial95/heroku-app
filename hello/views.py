@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from .forms import DrinkForm, PersonForm
 from .models import Greeting, Entry, Drinks, Sizes
+
 from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
@@ -15,6 +17,7 @@ def new_entry(request):
 def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
+@login_required
 def drinks(request):
     if request.method != 'POST':
         # No data submitted; create a blank form.
