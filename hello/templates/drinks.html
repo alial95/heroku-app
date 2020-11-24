@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
-{% endif %}
+
+
+
 <div class="jumbotron text-center">
     <div class="container">
+        {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
         <h1> Drinks App</h1>
         <h2>This app allows you to add new people and drinks, then create a order. </h2>
         <ul>
             <li><a href="{% url 'new_person' %}">Add a new Person</a></li>
             <li><a href="{% url 'new_drink' %}">Add a new Drink</a></li>
         </ul>
+        {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
 <div>
     testing the drinks page
 </div>
