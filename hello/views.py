@@ -63,6 +63,9 @@ def db(request):
 
     return render(request, "db.html", {"greetings": greetings})
 
+def logout(request):
+    return render(request, 'logout.html')
+
 class ViewUsers(ListView):
     model = User
     template_name = 'users.html'
