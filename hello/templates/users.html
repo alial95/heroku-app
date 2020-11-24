@@ -4,7 +4,7 @@
 {% if user_list %}
 <ul>
     {% for user in user_list %}
-        <li>{{ user.profile }}</li>
+        <li>{{ user.profile }} (Bio: {{ user.profile.bio }})</li>
     {% endfor %}
 </ul>
 {% else %}
