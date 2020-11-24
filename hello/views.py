@@ -34,6 +34,11 @@ def new_drinks(request):
     return render(request, 'new_drinks.html', {'form': form, 'sizes': sizes})
 
 def new_person(request):
+    context = {}
+    if Drinks.objects.all():
+        drinks = Drinks.objects.all()
+        context['drinks'] = drinks
+
     if request.method == "POST":  
         form = PersonForm(request.POST)  
         if form.is_valid():  
@@ -41,8 +46,9 @@ def new_person(request):
         else:
             print('Form is incorrectly formatted') 
     else:  
-        form = PersonForm() 
-    return render(request, 'new_person.html', {'form': form})
+        form = PersonForm()
+        context['form'] = form
+    return render(request, 'new_person.html', context)
 
 def db(request):
 
