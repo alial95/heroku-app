@@ -62,4 +62,4 @@ def db(request):
 
 class ViewUsers(ListView):
     model = User
-    template = 'users.html'
+    template_name = 'users.html'
