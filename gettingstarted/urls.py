@@ -29,6 +29,6 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', hello.views.register, name='register'),
     path('show_drinks/', hello.views.ViewDrinks.as_view(), name='display_drinks'),
-    path('show_people/', hello.views.ViewPeople.as_view(), name='display_people')
-    # path('logout/', hello.views.logout, name='logout')
+    path('show_people/', hello.views.ViewPeople.as_view(), name='display_people'),
+    path('covid/', include('covid.urls'))
 ]
