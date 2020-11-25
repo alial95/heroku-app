@@ -32,6 +32,7 @@ def new_drinks(request):
         form = DrinkForm(request.POST)  
         if form.is_valid():  
             form.save()
+            return redirect('new_drinks')
         else:
             print('Form is incorrectly formatted') 
     else:  
@@ -44,13 +45,15 @@ def new_person(request):
     if Drinks.objects.all():
         drinks = Drinks.objects.all()
         context['drinks'] = drinks
+        
 
     if request.method == "POST":  
         form = PersonForm(request.POST)  
         if form.is_valid():  
-            new_user = form.save()
-            login(request, new_user)
-            return redirect('drinks.html')
+            form.save()
+            return redirect('new_person')
+            
+            
         else:
             print('Form is incorrectly formatted') 
     else:  
@@ -79,7 +82,10 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)  
         if form.is_valid():  
-            form.save()
+            
+            new_user = form.save()
+            login(request, new_user)
+            return redirect('drinks.html')
     else:  
         form = UserCreationForm()
         context['form'] = form
