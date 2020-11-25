@@ -32,7 +32,7 @@ def new_drinks(request):
         form = DrinkForm(request.POST)  
         if form.is_valid():  
             form.save()
-            return redirect('new_drinks')
+            
         else:
             print('Form is incorrectly formatted') 
     else:  
