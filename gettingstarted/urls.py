@@ -19,6 +19,7 @@ urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
+    path('pokemon/', hello.views.new_entry, name='pokemon'),
     path('drinks/', hello.views.drinks, name='drinks'),
     path('new_drinks/', hello.views.new_drinks, name='new_drink'),
     path('new_person/', hello.views.new_person, name='new_person'),
