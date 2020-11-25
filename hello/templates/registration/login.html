@@ -4,13 +4,14 @@
 
 <div class="jumbotron text-center">
   <div style="background-image: url('top_background.jpg')">
+    
   <div class="container">
 <h2>Log In</h2>
 
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Log In</button>
+  <button type="search">Log In</button>
 </form>
 <input type="hidden" name="next"
      value="{% url 'index' %}" />
