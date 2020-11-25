@@ -13,7 +13,7 @@
         <form action="{% url 'new_person' %}" method='post'> 
             {% csrf_token %}
             {{ form.as_p }}
-            <button name="submit"> Add Person </button>
+            <button class="btn"> Add Person </button>
         </form>
 
 
