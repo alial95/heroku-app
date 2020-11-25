@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p>Hello World</p>
 
+<div class="jumbotron text-center">
+  <div style="background-image: url('top_background.jpg')">
+  <div class="container">
 <h2>Log In</h2>
+
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
@@ -11,4 +14,7 @@
 </form>
 <input type="hidden" name="next"
      value="{% url 'index' %}" />
+</div>
+</div>
+</div>
 {% endblock content %}
