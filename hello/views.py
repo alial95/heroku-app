@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
 from .forms import DrinkForm, PersonForm
-from .models import Greeting, Entry, Drinks, Sizes
+from .models import Greeting, Entry, Drinks, Sizes, Person
 from django.contrib.auth import login
 
 from django.contrib.auth.models import User
@@ -76,6 +76,14 @@ def logout(request):
 class ViewUsers(ListView):
     model = User
     template_name = 'users.html'
+
+class ViewPeople(ListView):
+    model = Person
+    template_name = 'show_people.html'
+
+class ViewDrinks(ListView):
+    model = Drinks
+    template_name = 'show_drinks.html'
 
 def register(request):
     context = {}
