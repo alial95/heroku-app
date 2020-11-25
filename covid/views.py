@@ -20,7 +20,7 @@ def covid_home(request):
 
     
     if request.method == 'POST':
-        area_name = request.POST['region']
+        area_name = request.POST['area_name']
 
         AREA_TYPE = 'region'
         AREA_NAME = area_name
