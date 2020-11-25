@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
 from .forms import DrinkForm, PersonForm
 from .models import Greeting, Entry, Drinks, Sizes
@@ -69,3 +70,14 @@ def logout(request):
 class ViewUsers(ListView):
     model = User
     template_name = 'users.html'
+
+def register(request):
+    context = {}
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)  
+        if form.is_valid():  
+            form.save()
+    else:  
+        form = UserCreationForm()
+        context['form'] = form
+    return render(request, 'register.html', context)
