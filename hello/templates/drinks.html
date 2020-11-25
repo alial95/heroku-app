@@ -17,6 +17,7 @@
         </ul>
         {% else %}
             <p>You are not logged in</p>
+            <div class="alert alert-info text-center" role="alert"> Please Log in to play the game!</div>
             <a href="{% url 'login' %}">Log In</a>
         {% endif %}
 <div>
