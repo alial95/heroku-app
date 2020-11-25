@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "hello",
 
     # Third party apps
-    'bootstrap4',
+    # 'bootstrap4',
 
 
 ]
