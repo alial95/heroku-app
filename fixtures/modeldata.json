@@ -1,0 +1,16 @@
+[
+    {
+      "model": "hello.testmodel",
+      "pk": 4,
+      "fields": {
+        "test": "John"
+      }
+    },
+    {
+      "model": "hello.testmodel",
+      "pk": 5,
+      "fields": {
+        "test": "Paul"
+      }
+    }
+  ]
