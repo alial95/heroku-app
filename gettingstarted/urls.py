@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 admin.autodiscover()
-
+import covid.views
 import hello.views
 
 # To add a new path, first import the app:
@@ -27,5 +27,5 @@ urlpatterns = [
     path('register/', hello.views.register, name='register'),
     path('show_drinks/', hello.views.ViewDrinks.as_view(), name='display_drinks'),
     path('show_people/', hello.views.ViewPeople.as_view(), name='display_people'),
-    path('covid/', include('covid.urls'))
+    path('covid/', covid.views.covid_home, name='covid')
 ]
