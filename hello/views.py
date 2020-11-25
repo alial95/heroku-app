@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
 from .forms import DrinkForm, PersonForm
 from .models import Greeting, Entry, Drinks, Sizes
+from django.contrib.auth import login
 
 from django.contrib.auth.models import User
 # Create your views here.
@@ -47,7 +48,9 @@ def new_person(request):
     if request.method == "POST":  
         form = PersonForm(request.POST)  
         if form.is_valid():  
-            form.save()
+            new_user = form.save()
+            login(request, new_user)
+            return redirect('drinks.html')
         else:
             print('Form is incorrectly formatted') 
     else:  
