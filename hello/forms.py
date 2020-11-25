@@ -6,12 +6,12 @@ from django.contrib.auth.models import User
 class DrinkForm(forms.ModelForm): 
     class Meta:
         model = Drinks
-        fields = '__all__'
+        fields = ['name', 'price', 'size']
 
 class PersonForm(forms.ModelForm):
     class Meta:
         model = Person
-        fields = '__all__'
+        fields = ['first_name', 'last_name', 'favourite_drink', 'age']
 
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=False)
