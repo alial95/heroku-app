@@ -41,7 +41,16 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "hello",
+
+    # Third party apps
+    'bootstrap4',
+
+
 ]
+
+BOOTSTRAP4 = {
+ 'include_jquery': True,
+ }
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
