@@ -7,8 +7,8 @@
 <div class="jumbotron text-center">
     <div class="container">
         {% if user.is_authenticated %}
-        Hi {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
+        <h1>Hi {{ user.username }}!</h1>
+
         <h1> Drinks App</h1>
         <h2>This app allows you to add new people and drinks, then create a order. </h2>
         <ul>
