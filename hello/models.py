@@ -71,8 +71,8 @@ class TestModel(models.Model):
     test = models.CharField(max_length=90)
 
 # class Round:
-#     brewer = models.CharField(max_length=150)
-#     orders = models.JSONField()
+#     brewer = models.ForeignKey(Person, on_delete=models.CASCADE)
+#     order = models.JSONField()
 #     cost = models.FloatField()
 
 
