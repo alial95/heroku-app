@@ -17,7 +17,7 @@ def new_entry(request):
 def projects(request):
     return render(request, 'projects.html')
 # def new_topic(request):
-# @login_required
+@login_required
 def drinks(request):
     if request.method != 'POST':
         # No data submitted; create a blank form.
