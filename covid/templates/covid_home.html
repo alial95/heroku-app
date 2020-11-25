@@ -6,9 +6,8 @@
     {% csrf_token %}
     {{ form.as_p }}
     <div class="input-group">
-        <input type="text" class="form-control" name="area_name" placeholder="Search">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default" type="submit" name="area_name" placeholder="Search">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
