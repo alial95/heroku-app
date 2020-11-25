@@ -77,8 +77,9 @@ class TestModel(models.Model):
 
 
 
-# class Orders:
+# class Order:
 #     brewer = models.ForeignKey(Person, on_delete=models.SET_DEFAULT)
-#     cost = models.()
+#     drink = models.ForeignKey(Drinks, on_delete=models.CASCADE)
+#     price = models.ForeignKey(Drinks, on_delete=models.CASCADE)
 
 

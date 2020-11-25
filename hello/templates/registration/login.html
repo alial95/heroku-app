@@ -12,7 +12,7 @@
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button class="jumbotron btn-primary">Log In</button>
+  <button class="glyphicon glyphicon-thumbs-up">Log In</button>
 </form>
 <input type="hidden" name="next"
      value="{% url 'index' %}" />
