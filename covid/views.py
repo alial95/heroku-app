@@ -10,14 +10,14 @@ from matplotlib import pyplot as plt
 
 def covid_home(request):
 
-    def make_graph():
-        fig, ax = plt.subplots()
-        x = [1, 2, 3, 4, 5]
-        y1 = [4, 5, 6, 7, 8]
-        y2 = [5, 6, 7, 8, 9]
+    def make_graph(data):
+        fig, ax = plt.subplots(figsize=(10, 7))
+        x = [x['date'] for x in data[:10]]
+        y1 = [x['dailyCases'] for x in data[:10]]
+        # y2 = [5, 6, 7, 8, 9]
         # y = np.vstack((y1, y2))
-        labels = ['x', 'y']
-        ax.stackplot(x, y1, y2, labels=labels)
+        labels = ['Date', 'No of Cases']
+        ax.stackplot(x, y1, labels=labels)
         # plt.plot(range(100))
         # fig = plt.gcf()
         buf = io.BytesIO()
@@ -27,7 +27,6 @@ def covid_home(request):
         uri = urllib.parse.quote(string)
         return uri
     form = AreaForm
-    uri = make_graph()
     ENDPOINT = "https://api.coronavirus.data.gov.uk/v1/data"
 
 
@@ -55,13 +54,22 @@ def covid_home(request):
         f"areaName={ AREA_NAME }"
         ]
         api_params = {
-        "filters": str.join(";", filters),
-        "structure": json.dumps(structure, separators=(",", ":")),
-        "latestBy": "cumCasesByPublishDate"
+            "filters": str.join(";", filters),
+            "structure": json.dumps(structure, separators=(",", ":")),
+            "latestBy": "cumCasesByPublishDate"
     
         }
         response = get(ENDPOINT, params=api_params, timeout=10)
         data = response.json()['data'][0]
+
+        api_params2 = {
+            "filters": str.join(";", filters),
+            "structure": json.dumps(structure, separators=(",", ":")),
+
+        }
+        response2 = get(ENDPOINT, params=api_params2, timeout=10)
+        graph_data = response2.json()['data']
+        uri = make_graph(graph_data)
         context = {
             'Date': data['date'],
             'Area': data['name'],
@@ -73,7 +81,7 @@ def covid_home(request):
     else:
         context = {
             'form': form,
-            'data': uri
+            # 'data': uri
         }
         
     return render(request, 'covid_home.html', context)
