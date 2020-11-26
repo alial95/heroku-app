@@ -129,5 +129,9 @@ LOGOUT_REDIRECT_URL = 'index'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
+# STATICFILES_DIRS = [
+#     '/covid/static'
+    
+#     ]
 
 django_heroku.settings(locals())
