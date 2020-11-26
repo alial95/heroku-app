@@ -11,15 +11,15 @@ from matplotlib import pyplot as plt
 def covid_home(request):
 
     def make_graph():
-        # fig, ax = plt.subplots()
-        # x = [1, 2, 3, 4, 5]
-        # y1 = [4, 5, 6, 7, 8]
-        # y2 = [5, 6, 7, 8, 9]
-        # # y = np.vstack((y1, y2))
-        # labels = ['x', 'y']
-        # ax.stackplot(x, y1, y2, labels=labels)
-        plt.plot(range(100))
-        fig = plt.gcf()
+        fig, ax = plt.subplots()
+        x = [1, 2, 3, 4, 5]
+        y1 = [4, 5, 6, 7, 8]
+        y2 = [5, 6, 7, 8, 9]
+        # y = np.vstack((y1, y2))
+        labels = ['x', 'y']
+        ax.stackplot(x, y1, y2, labels=labels)
+        # plt.plot(range(100))
+        # fig = plt.gcf()
         buf = io.BytesIO()
         fig.savefig(buf, format='png')
         buf.seek(0)
