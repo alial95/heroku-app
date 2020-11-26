@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p> Hello World</p>
+<div class="jumbotron text-center">
 <form method='post'> 
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn" name='area_name'> Add area </button>
     <div class="input-group">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit" name="area_name" placeholder="Search">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
+    </div>
 </form>
 <div class="row">
     {% if Date and Area and Cases and TotalCases %}
@@ -25,4 +25,10 @@
     {% endif %}
 </div>
 
+<div class="container">
+  <a href="/" class="lang-logo">
+    <img src="{% static 'covid_home.png'%}">
+  </a>
+</div>
+</div>
 {% endblock content %}
