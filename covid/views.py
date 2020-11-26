@@ -4,6 +4,7 @@ import json
 from requests import get
 
 def covid_home(request):
+    form = AreaNames
     ENDPOINT = "https://api.coronavirus.data.gov.uk/v1/data"
 
 
@@ -40,9 +41,12 @@ def covid_home(request):
             'Date': data['date'],
             'Area': data['name'],
             'Cases': data['dailyCases'],
-            'TotalCases': data['cumulative']
+            'TotalCases': data['cumulative'],
+            'form': form
         }
     else:
-        context = {}
+        context = {
+            'form': form
+        }
         
     return render(request, 'covid_home.html', context)
