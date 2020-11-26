@@ -8,6 +8,5 @@ class Regions(models.Model):
 
 class AreaNames(models.Model):
     area = models.CharField(max_length=200)
-    region = models.ForeignKey(Regions, default=1, on_delete=models.SET_DEFAULT)
     def __str__(self):
         return self.area

@@ -1,0 +1,1 @@
+[{"model": "covid.regions", "pk": 1, "fields": {"region": "England"}}, {"model": "covid.regions", "pk": 2, "fields": {"region": "Northern Ireland"}}, {"model": "covid.regions", "pk": 3, "fields": {"region": "Scotland"}}, {"model": "covid.regions", "pk": 4, "fields": {"region": "Wales"}}]
