@@ -3,9 +3,28 @@ from .models import AreaNames
 from .forms import AreaForm
 import json
 from requests import get
+import io
+import base64, urllib
+from matplotlib import pyplot as plt
+
 
 def covid_home(request):
+
+    def make_graph():
+        fig, ax = plt.subplots()
+        x = [1, 2, 3, 4, 5]
+        y1 = [4, 5, 6, 7, 8]
+        y2 = [5, 6, 7, 8, 9]
+        # y = np.vstack((y1, y2))
+        labels = ['x', 'y']
+        ax.stackplot(x, y1, y2, labels=labels)
+        buf = io.BytesIO()
+        buf.seek(0)
+        string = base64.b64encode(buf.read())
+        uri = urllib.parse.quote(string)
+        return uri
     form = AreaForm
+    uri = make_graph()
     ENDPOINT = "https://api.coronavirus.data.gov.uk/v1/data"
 
 
@@ -45,11 +64,13 @@ def covid_home(request):
             'Area': data['name'],
             'Cases': data['dailyCases'],
             'TotalCases': data['cumulative'],
-            'form': form
+            'form': form,
+            'data': uri
         }
     else:
         context = {
-            'form': form
+            'form': form,
+            'data': uri
         }
         
     return render(request, 'covid_home.html', context)
