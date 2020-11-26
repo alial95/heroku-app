@@ -4,5 +4,6 @@ from .models import AreaNames
 class AreaForm(forms.Form):
     model_choice = forms.ModelChoiceField(
         queryset = AreaNames.objects.all(),
-        initial = 0
+        initial = 0,
+        label="Please enter an area: "
         )
