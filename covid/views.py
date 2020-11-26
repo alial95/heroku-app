@@ -24,7 +24,7 @@ def covid_home(request):
     if request.method == 'POST':
         # area_id = request.POST['area_name']
         area_names = AreaNames.objects.all()
-        area_name = form.model_choice.get(pk=request.POST['area_name'])
+        area_name = form.objects.get(pk=request.POST['area_name'])
 
         AREA_TYPE = 'region'
         AREA_NAME = area_name
