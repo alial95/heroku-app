@@ -10,16 +10,16 @@ from matplotlib import pyplot as plt
 
 def covid_home(request):
 
+    def reverse_list(input_list): 
+        input_list.reverse()
+        return input_list
+
     def make_graph(data):
         fig, ax = plt.subplots(figsize=(10, 7))
-        x = [x['date'] for x in data[:10]]
-        y1 = [x['dailyCases'] for x in data[:10]]
-        # y2 = [5, 6, 7, 8, 9]
-        # y = np.vstack((y1, y2))
+        x = reverse_list([x['date'] for x in data[:10]]) # flip the data around to see it ascending by date
+        y1 = reverse_list([x['dailyCases'] for x in data[:10]])
         labels = ['Date', 'No of Cases']
         ax.stackplot(x, y1, labels=labels)
-        # plt.plot(range(100))
-        # fig = plt.gcf()
         buf = io.BytesIO()
         fig.savefig(buf, format='png')
         buf.seek(0)
@@ -38,14 +38,14 @@ def covid_home(request):
         "CumulativeDeaths": "cumDeathsByDeathDate",
         'dailyDeaths': 'newDeathsByPublishDate'
         }
-
+   
     
 
     
     if request.method == 'POST':
-        area_id = request.POST['model_choice']
+        area_id = request.POST['model_choice']  # get the area pk from the form
         area_name = AreaNames.objects.get(pk=area_id)
-        # area_name = form.objects.get(pk=request.POST['area_name'])
+
 
         AREA_TYPE = 'region'
         AREA_NAME = area_name
