@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from .models import AreaNames
+from .forms import AreaForm
 import json
 from requests import get
 
 def covid_home(request):
-    form = AreaNames
+    form = AreaForm
     ENDPOINT = "https://api.coronavirus.data.gov.uk/v1/data"
 
 
