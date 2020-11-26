@@ -25,11 +25,10 @@
     {% endif %}
 </div>
 
-<div class="container">
-    <img src="{% static 'example_graph.png'%}">
-</div>
 <div>
+  {% if data %}
   <img src="data:image/png;base64,{{ data }}">
 </div>
+  {% endif }
 </div>
 {% endblock content %}

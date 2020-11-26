@@ -81,7 +81,6 @@ def covid_home(request):
     else:
         context = {
             'form': form,
-            # 'data': uri
         }
         
     return render(request, 'covid_home.html', context)
