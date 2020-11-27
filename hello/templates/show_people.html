@@ -6,7 +6,9 @@
 {% if person_list %}
 <ul>
     {% for person in person_list %}
-        <li> (Person's Name: {{ person.name }})</li>
+        <li> (First Name: {{ person.first_name }})</li>
+        <li> (Last Name: {{ person.last_name }})</li>   
+        
     {% endfor %}
 </ul>
 {% else %}
