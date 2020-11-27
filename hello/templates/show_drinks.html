@@ -3,9 +3,9 @@
 {% block content %}
 <div class='jumbotron text'>
     <div class='container'>
-{% if drink_list %}
+{% if drinks_list %}
 <ul>
-    {% for drink in drink_list %}
+    {% for drink in drinks_list %}
         <li>{{ user.drink }} (Drink Name: {{ drink.name }})</li>
     {% endfor %}
 </ul>
