@@ -91,7 +91,7 @@ def register(request):
         if form.is_valid():  
             new_user = form.save()
             login(request, new_user)
-            return redirect('drinks')
+            return redirect('hello:drinks')
     else:  
         form = UserCreationForm()
     context = {'form': form}
