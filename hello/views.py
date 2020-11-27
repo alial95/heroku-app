@@ -86,15 +86,13 @@ class ViewDrinks(ListView):
     template_name = 'show_drinks.html'
 
 def register(request):
-    context = {}
     if request.method == 'POST':
         form = UserCreationForm(request.POST)  
         if form.is_valid():  
-            
             new_user = form.save()
             login(request, new_user)
-            return redirect('drinks.html')
+            return redirect('drinks')
     else:  
         form = UserCreationForm()
-        context['form'] = form
+    context = {'form': form}
     return render(request, 'register.html', context)
