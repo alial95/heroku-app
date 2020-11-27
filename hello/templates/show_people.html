@@ -7,7 +7,8 @@
 <ul>
     {% for person in person_list %}
         <li> (First Name: {{ person.first_name }})</li>
-        <li> (Last Name: {{ person.last_name }})</li>   
+        <li> (Last Name: {{ person.last_name }})</li> 
+        <li>(Owner: {{ person.owner}})</li>
         
     {% endfor %}
 </ul>
