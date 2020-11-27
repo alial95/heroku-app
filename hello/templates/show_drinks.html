@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p>Hello World</p>
-
-
+<div class='jumbotron text'>
+    <div class='container'>
+{% if drink_list %}
+<ul>
+    {% for drink in drink_list %}
+        <li>{{ user.drink }} (Drink Name: {{ drink.name }})</li>
+    {% endfor %}
+</ul>
+{% else %}
+ <p> No drinks available</p>
+{% endif %}
+</div>
+</div>
 {% endblock content %}
