@@ -21,7 +21,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('pokemon/', hello.views.new_entry, name='pokemon'),
     path('drinks/', include('hello.urls')),
-    path('new_drinks/', hello.views.new_drinks, name='new_drink'),
     path('new_person/', hello.views.new_person, name='new_person'),
     path('users/', hello.views.ViewUsers.as_view(), name='users'),
     path('', include('django.contrib.auth.urls')),
