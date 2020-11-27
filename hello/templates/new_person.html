@@ -10,7 +10,7 @@
         {% if drinks == 0 %}
         <p> There are no drinks currently in the database right now. Would you like to add some first?</p>
         {% endif %}
-        <form action="{% url 'new_person' %}" method='post'> 
+        <form action="{% url 'hello:new_person' %}" method='post'> 
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn"> Add Person </button>
