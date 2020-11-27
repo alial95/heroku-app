@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p>Hello World</p>
+<div class='jumbotron text'>
+    <div class='container'>
+{% if person_list %}
+<ul>
+    {% for person in person_list %}
+        <li> (Person's Name: {{ person.name }})</li>
+    {% endfor %}
+</ul>
+{% else %}
+ <p> No People available</p>
+{% endif %}
+</div>
+</div>
 
 
 {% endblock content %}
