@@ -21,7 +21,7 @@ def covid_home(request):
         labels = ['Date', 'No of Cases']
         ax.stackplot(x, y1, labels=labels)
         buf = io.BytesIO()
-        fig.title('Covid cases for the ladt thirty days')
+        plt.title('Covid cases for the ladt thirty days')
         fig.savefig(buf, format='png')
         buf.seek(0)
         string = base64.b64encode(buf.read())
@@ -98,7 +98,7 @@ def nation_select(request):
         labels = ['Date', 'No of Cases']
         ax.stackplot(x, y1, labels=labels)
         buf = io.BytesIO()
-        fig.title('Covid cases over the last thirty days')
+        plt.title('Covid cases over the last thirty days')
         fig.savefig(buf, format='png')
         buf.seek(0)
         string = base64.b64encode(buf.read())
