@@ -7,6 +7,14 @@ import io
 import base64, urllib
 from matplotlib import pyplot as plt
 
+def covid(request):
+
+    return render(request, 'covid.html')
+
+
+
+
+
 
 def covid_home(request):
 
@@ -22,7 +30,7 @@ def covid_home(request):
         ax.stackplot(x, y1, labels=labels)
         buf = io.BytesIO()
         plt.title('Covid cases for the ladt thirty days')
-        plt.xticks(rotation=45)
+        plt.xticks(x, rotation=45)
         fig.savefig(buf, format='png')
         buf.seek(0)
         string = base64.b64encode(buf.read())
@@ -100,7 +108,7 @@ def nation_select(request):
         ax.stackplot(x, y1, labels=labels)
         buf = io.BytesIO()
         plt.title('Covid cases over the last thirty days')
-        plt.xticks(rotation=45)
+        plt.xticks(x, rotation=45)
         fig.savefig(buf, format='png')
         buf.seek(0)
         string = base64.b64encode(buf.read())
