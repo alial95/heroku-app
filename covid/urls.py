@@ -5,7 +5,6 @@ from . import views
 app_name = 'covid'
 urlpatterns = [
     path('', views.covid_home, name='covid'),
-    # path('projects.html', views.projects, name='projects'),
-    # path('drinks.html', views.drinks, name='drinks')
+    path('nations/', views.nation_select, name='nations')
     
 ]
